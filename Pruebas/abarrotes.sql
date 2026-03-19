@@ -1,0 +1,71 @@
+DROP TABLE IF EXISTS productos_abarrotes;
+
+CREATE TABLE productos_abarrotes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    codigo VARCHAR(20) NOT NULL,
+    nombre VARCHAR(120) NOT NULL,
+    categoria VARCHAR(80),
+    marca VARCHAR(80),
+    precio DECIMAL(10,2),
+    stock INT,
+    unidad VARCHAR(20),
+    fecha_caducidad DATE,
+    activo TINYINT(1) DEFAULT 1
+);
+
+INSERT INTO productos_abarrotes 
+(codigo,nombre,categoria,marca,precio,stock,unidad,fecha_caducidad,activo) VALUES
+('AB001','Arroz 1kg','Granos','La Merced',24.50,120,'pieza','2026-12-31',1),
+('AB002','Frijol negro 1kg','Granos','Campo Real',32.00,95,'pieza','2026-11-30',1),
+('AB003','Azúcar 1kg','Endulzantes','Zulka',27.80,140,'pieza','2027-01-15',1),
+('AB004','Sal fina 1kg','Condimentos','La Fina',18.20,200,'pieza','2028-05-01',1),
+('AB005','Aceite vegetal 900ml','Aceites','Nutrioli',48.90,85,'botella','2027-03-10',1),
+('AB006','Atún en lata','Enlatados','Dolores',21.30,160,'lata','2028-06-30',1),
+('AB007','Sardinas en tomate','Enlatados','Guaymex',19.40,130,'lata','2028-04-12',1),
+('AB008','Leche entera 1L','Lácteos','Lala',25.60,110,'litro','2026-03-01',1),
+('AB009','Leche deslactosada 1L','Lácteos','Alpura',27.10,90,'litro','2026-03-02',1),
+('AB010','Café soluble 200g','Bebidas','Nescafe',79.90,70,'frasco','2027-08-20',1),
+
+('AB011','Galletas María','Botanas','Gamesa',16.50,180,'paquete','2027-02-10',1),
+('AB012','Chocolate en polvo','Bebidas','ChocoMilk',58.00,65,'bote','2027-09-01',1),
+('AB013','Harina de trigo 1kg','Harinas','Tres Estrellas',22.90,125,'pieza','2026-10-15',1),
+('AB014','Pasta spaghetti','Pastas','La Moderna',14.80,210,'paquete','2027-07-07',1),
+('AB015','Pasta codito','Pastas','La Moderna',15.10,175,'paquete','2027-07-07',1),
+('AB016','Mayonesa 390g','Aderezos','McCormick',36.50,88,'frasco','2026-12-20',1),
+('AB017','Catsup 500g','Aderezos','Heinz',34.20,92,'botella','2027-05-14',1),
+('AB018','Mostaza 250g','Aderezos','Frenchs',22.70,75,'botella','2027-06-18',1),
+('AB019','Vinagre blanco 1L','Condimentos','La Costeña',19.90,140,'botella','2028-01-01',1),
+('AB020','Salsa picante','Condimentos','Valentina',21.00,155,'botella','2028-02-02',1),
+
+('AB021','Cereal hojuelas','Cereales','Kelloggs',64.50,60,'caja','2027-11-11',1),
+('AB022','Avena 500g','Cereales','Quaker',28.40,100,'bolsa','2027-04-05',1),
+('AB023','Mermelada fresa','Untables','McCormick',39.90,72,'frasco','2027-10-10',1),
+('AB024','Miel 500g','Endulzantes','Abeja Reyna',85.00,40,'frasco','2028-03-03',1),
+('AB025','Gelatina fresa','Postres','D'Gari',11.20,220,'caja','2027-12-12',1),
+('AB026','Flan vainilla','Postres','D'Gari',13.50,150,'caja','2027-12-12',1),
+('AB027','Pan molido','Panadería','Bimbo',24.30,95,'bolsa','2026-09-09',1),
+('AB028','Pan tostado','Panadería','Bimbo',42.10,66,'paquete','2026-09-09',1),
+('AB029','Tortillas de harina','Panadería','Tía Rosa',38.50,80,'paquete','2026-04-04',1),
+('AB030','Chiles en lata','Enlatados','La Costeña',23.60,135,'lata','2028-08-08',1),
+
+('AB031','Elote en lata','Enlatados','Herdez',24.70,122,'lata','2028-08-08',1),
+('AB032','Champiñones en lata','Enlatados','Herdez',29.40,97,'lata','2028-08-08',1),
+('AB033','Jugo de naranja 1L','Bebidas','Del Valle',31.20,102,'litro','2026-05-05',1),
+('AB034','Refresco cola 2L','Bebidas','Coca-Cola',39.90,210,'botella','2026-06-06',1),
+('AB035','Agua embotellada 1L','Bebidas','Bonafont',14.00,300,'botella','2027-01-01',1),
+('AB036','Papel higiénico 4pzs','Higiene','Regio',52.00,88,'paquete',NULL,1),
+('AB037','Servilletas 250pzs','Higiene','Pétalo',28.90,120,'paquete',NULL,1),
+('AB038','Detergente 1kg','Limpieza','Ariel',48.00,76,'bolsa',NULL,1),
+('AB039','Suavizante 850ml','Limpieza','Ensueño',36.70,64,'botella',NULL,1),
+('AB040','Cloro 1L','Limpieza','Cloralex',19.50,142,'botella',NULL,1),
+
+('AB041','Esponja cocina','Limpieza','Scotch-Brite',12.30,190,'pieza',NULL,1),
+('AB042','Jabón barra','Higiene','Zote',17.80,170,'pieza',NULL,1),
+('AB043','Shampoo 750ml','Higiene','Pantene',89.00,55,'botella',NULL,1),
+('AB044','Pasta dental','Higiene','Colgate',34.60,130,'pieza',NULL,1),
+('AB045','Cepillo dental','Higiene','Oral-B',29.90,140,'pieza',NULL,1),
+('AB046','Rastrillo desechable','Higiene','Gillette',27.00,90,'pieza',NULL,1),
+('AB047','Toallas femeninas','Higiene','Kotex',45.50,110,'paquete',NULL,1),
+('AB048','Algodón 100g','Higiene','Jaloma',18.40,98,'bolsa',NULL,1),
+('AB049','Encendedor','Otros','Bic',9.90,210,'pieza',NULL,1),
+('AB050','Velas 4pzs','Otros','Luz',22.00,115,'paquete',NULL,1);

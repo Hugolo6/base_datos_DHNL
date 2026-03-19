@@ -1,0 +1,14 @@
+{
+  "bot": {
+    "token": "8413133141:AAFObHI07nV8KxRc9PZDlo7JpafP3me4Vis",
+    "chat_id": "7255322769"
+  },
+  "mysql": {
+    "host": "localhost",
+    "user": "dba",
+    "password": "123456789",
+    "database": "super_dba",
+    "port": 3309
+
+  }
+}
