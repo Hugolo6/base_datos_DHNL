@@ -40,7 +40,8 @@ class Importar:
         minuto = datetime.datetime.now()
 
 
-        # importacion de todas los datos
+        # importacion de todas los
+        # parte mimi
 
 importar_csv = Importar()
 importar_csv.procesar()
