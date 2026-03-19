@@ -39,5 +39,8 @@ class Importar:
         bot.send_message(msg)
         minuto = datetime.datetime.now()
 
+
+        # importacion de todas los datos
+
 importar_csv = Importar()
 importar_csv.procesar()
