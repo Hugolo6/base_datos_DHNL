@@ -1,47 +1,38 @@
-from libs.m5config import M5config
-from libs.m5bot import M5bot
 from libs.m5mysql import M5mysql
 import csv
 
 class Importar:
     def __init__(self):
-        self.archivo = "csv/economicas_por_menor.csv"
-    def procesar (self):
-        #variable con mitutos y segundos
+        self.archivo = "csv/directorio_menor.csv"
+
+    def procesar(self):
+        # variable minuto y segundo
         minuto = datetime.datetime.now()
-        print(minuto)
         bot = M5bot()
-        msg = "iniciando importacion"
+        msg = f"Iniciando importación de CSV {minuto}"
         bot.send_message(msg)
 
         mysql = M5mysql()
-        sql = "select * from establecimiento"
+        sql = "truncate table establecimiento"
         mysql.exec(sql)
-
-        # ---------------
+        #---------------
         # leer el archivo self.archivo
-        with open(self.archivo, newline='', encoding='utf-8') as File: #endoding es para que al migrar me muestre los caracteres especiales
-            row = csv.reader(File)
-            for r in row:
+        with open(self.archivo, newline='', encoding='utf-8') as File:
+            rows = csv.reader(File)
+            for r in rows:
                 print(r[0])
                 print(r[6])
-                sql = f("INSERT INTO 'establecimiento' ('establecimienito') VALUES ('(r[0])')")
-
+                sql = f"INSERT INTO `establecimiento`(`establecimiento`) VALUES ('{r[0]}');"
+                print(sql)
                 mysql.exec(sql)
-
                 # insertar en la base de datos
                 # mysql = M5mysql()
-                # sql = "insert into directorio_menor values (null, %s, %s, %s, %s, %s, %s, %s)"
-                # mysql.query(sql, row)
-        # ---------------
 
-        msg = "fin de la importacion"
-        bot.send_message(msg)
+                # mysql.query(sql, r)
+        #---------------
         minuto = datetime.datetime.now()
-
-
-        # importacion de todas los
-        # parte mimi
+        msg = f"Fin de la importación {minuto}"
+        bot.send_message(msg)
 
 importar_csv = Importar()
 importar_csv.procesar()
